@@ -1,10 +1,14 @@
-<table class="table table-dark table-striped">
+<div *ngIf="dataLoaded==false" class="spinner-grow" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded!=false" class="table table-dark table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">ProductName</th>
-            <th scope="col">CategoryId</th>
-            <th scope="col">UnitPrice</th>
+            <th scope="col">Ürün Adı</th>
+            <th scope="col">Kategori Id</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">Stok</th>
           </tr>
     </thead>
     <tbody >
@@ -12,7 +16,8 @@
           <td>{{a.productId}}</td>
           <td>{{a.productName}}</td>
           <th >{{a.categoryId}}</th>
-          <th >{{a.unitPrice}}</th>
+          <th >{{a.unitPrice}} TL</th>
+          <th >{{a.unitsInStock}} Adet</th>
         </tr>
       </tbody>
 </table>
